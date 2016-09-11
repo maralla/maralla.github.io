@@ -2,7 +2,9 @@
   font-family: 'Archivo Black';
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/archivo.woff2");
+
+  /* csslint bulletproof-font-face:false */
+  src: url('/fonts/archivo.woff') format('woff');
 }
 
 html,body {
@@ -11,24 +13,28 @@ html,body {
 }
 
 .container {
-  height: 100%;
-  width: 100%;
+  align-items: center;
+  color: #818181;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   font-family: 'Archivo Black', sans-serif;
   font-size: 5em;
-  text-transform: uppercase;
+  height: 100%;
+  justify-content: center;
   text-align: center;
-  color: #818181;
+  text-transform: uppercase;
+  width: 100%;
 }
 
-.container div {
+.container .items {
+  align-items: baseline;
+  display: flex;
   padding-bottom: 10%;
 }
 
 .heart {
+  -wibkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   background-color: #D32F2F;
   display: inline-block;
   height: 50px;
@@ -37,28 +43,51 @@ html,body {
   top: 0;
   transform: rotate(-45deg);
   width: 50px;
-  -wibkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
 }
 
 .heart:before,
 .heart:after {
-  content: "";
   background-color: #D32F2F;
   border-radius: 50%;
+  content: "";
   height: 50px;
   position: absolute;
   width: 50px;
 }
 
 .heart:before {
-  top: -25px;
   left: 0;
+  top: -25px;
 }
 
 .heart:after {
   left: 25px;
   top: 0;
+}
+
+@media only screen and (max-width : 600px) {
+  .container {
+    font-size: 3em;
+  }
+
+  .heart {
+    margin: 0 46px;
+  }
+
+  .heart,
+  .heart:before,
+  .heart:after {
+    height: 35px;
+    width: 35px;
+  }
+
+  .heart:before {
+    top: -17px;
+  }
+
+  .heart:after {
+    left: 17px;
+  }
 }
 
 @-webkit-keyframes pulse {
@@ -97,12 +126,15 @@ html,body {
 
 .pulse {
   -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
   animation-name: pulse;
 }
 
 .animated {
   -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
   animation-fill-mode: both;
 }
