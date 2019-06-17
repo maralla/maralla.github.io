@@ -1,0 +1,24 @@
+{
+  "name": "maralla.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "parcel": "^1.12.3"
+  },
+  "scripts": {
+    "build": "rm -rf static && parcel build src/index.html --public-url /static -d static && mv static/index.html ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maralla/maralla.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maralla/maralla.github.io/issues"
+  },
+  "homepage": "https://github.com/maralla/maralla.github.io#readme"
+}
