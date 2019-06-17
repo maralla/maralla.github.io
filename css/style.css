@@ -8,6 +8,7 @@
 }
 
 html,body {
+  margin: 0;
   height: 100%;
   width: 100%;
 }
@@ -27,9 +28,9 @@ html,body {
 }
 
 .container .items {
-  align-items: baseline;
   display: flex;
-  padding-bottom: 10%;
+  margin-bottom: 10%;
+  justify-content: center;
 }
 
 .heart {
